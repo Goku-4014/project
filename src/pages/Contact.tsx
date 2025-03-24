@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail , CodeIcon} from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -8,10 +8,17 @@ export default function Contact() {
         <h2 className="text-4xl font-bold text-center mb-16">Let's Connect</h2>
         <div className="max-w-xl mx-auto flex flex-col gap-6">
           <a href="https://github.com/Goku-4014" className="bg-gray-800 p-6 rounded-xl flex items-center gap-4 hover:bg-gray-700 transition-colors">
-            <Github className="w-8 h-8" />
+            <Github className="w-8 h-8" /> 
             <div>
               <h3 className="font-bold">GitHub</h3>
-              <p className="text-gray-400">Check out my open source contributions</p>
+              <p className="text-gray-400">Check out my contributions</p>
+            </div>
+          </a>
+          <a href="#" className="bg-gray-800 p-6 rounded-xl flex items-center gap-4 hover:bg-gray-700 transition-colors">
+            <CodeIcon className="w-8 h-8" />
+            <div>
+              <h3 className="font-bold">LeetCode</h3>
+              <p className="text-gray-400">Check out my Profile...</p>
             </div>
           </a>
           <a href="#" className="bg-gray-800 p-6 rounded-xl flex items-center gap-4 hover:bg-gray-700 transition-colors">
