@@ -7,7 +7,7 @@ export default function Contact() {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-16">Let's Connect</h2>
         <div className="max-w-xl mx-auto flex flex-col gap-6">
-          <a href="#" className="bg-gray-800 p-6 rounded-xl flex items-center gap-4 hover:bg-gray-700 transition-colors">
+          <a href="https://github.com/Goku-4014" className="bg-gray-800 p-6 rounded-xl flex items-center gap-4 hover:bg-gray-700 transition-colors">
             <Github className="w-8 h-8" />
             <div>
               <h3 className="font-bold">GitHub</h3>
@@ -21,11 +21,11 @@ export default function Contact() {
               <p className="text-gray-400">Connect with me professionally</p>
             </div>
           </a>
-          <a href="mailto:your.email@example.com" className="bg-gray-800 p-6 rounded-xl flex items-center gap-4 hover:bg-gray-700 transition-colors">
+          <a href="mailto:mightymanish8@gmail.com" className="bg-gray-800 p-6 rounded-xl flex items-center gap-4 hover:bg-gray-700 transition-colors">
             <Mail className="w-8 h-8" />
             <div>
               <h3 className="font-bold">Email</h3>
-              <p className="text-gray-400">your.email@example.com</p>
+              <p className="text-gray-400">mightymanish8@gmail.com</p>
             </div>
           </a>
         </div>
