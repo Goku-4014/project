@@ -11,7 +11,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl shadow-blue-500/20">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" 
+                src="https://img.freepik.com/free-photo/user-profile-icon-front-side-with-white-background_187299-40010.jpg?ga=GA1.1.1126935933.1741076373&semt=ais_hybrid" 
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />
