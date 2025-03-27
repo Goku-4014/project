@@ -11,7 +11,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl shadow-blue-500/20">
               <img 
-                src="data\chandler.jpg" 
+                src="./chandler.jpg" 
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />
@@ -36,7 +36,7 @@ export default function Home() {
                   Contact Me
                 </Link>
                 <a 
-                  href="data\7.pdf" 
+                  href="./7.pdf" 
                   download 
                   className="bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg font-medium flex items-center gap-2"
                 >
