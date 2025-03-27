@@ -7,7 +7,7 @@ export default function Projects() {
       title: "Pitch Management App for Startups",
       description: "Developed a web application to assist startups in creating and managing their pitch presentations",
       tech: ["NextJS", "TypeScript", "Tailwind CSS"],
-      image: "data/startup.jpg",
+      image: "./startup.jpg",
       github: "https://github.com/Goku-4014/pitching_app",
       demo: "https://pitching-app.vercel.app/"
     },
@@ -23,7 +23,7 @@ export default function Projects() {
       title: "Portfolio Website",
       description: "A personal portfolio website built with React and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
       tech: ["React", "Tailwind CSS", "React Router"],
-      image: "data/portfolio.jpg",
+      image: "./portfolio.jpg",
       github: "https://github.com/Goku-4014/project",
       demo: "#"
     }
