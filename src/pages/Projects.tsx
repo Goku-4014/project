@@ -4,15 +4,15 @@ import { Github, ExternalLink, Terminal } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: "Task Management App",
-      description: "A React-based todo application with features like task categories, due dates, and priority levels. Built using React hooks and local storage for data persistence.",
-      tech: ["React", "TypeScript", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80",
-      github: "#",
-      demo: "#"
+      title: "Pitch Management App for Startups",
+      description: "Developed a web application to assist startups in creating and managing their pitch presentations",
+      tech: ["NextJS", "TypeScript", "Tailwind CSS"],
+      image: "data/startup.jpg",
+      github: "https://github.com/Goku-4014/pitching_app",
+      demo: "https://pitching-app.vercel.app/"
     },
     {
-      title: "Weather Dashboard",
+      title: "Weather Dashboard (In-Progress)",
       description: "Real-time weather application that displays current weather conditions and forecasts. Integrates with OpenWeatherMap API and features a responsive design.",
       tech: ["JavaScript", "API Integration", "CSS3"],
       image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80",
@@ -23,8 +23,8 @@ export default function Projects() {
       title: "Portfolio Website",
       description: "A personal portfolio website built with React and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
       tech: ["React", "Tailwind CSS", "React Router"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-      github: "#",
+      image: "data/portfolio.jpg",
+      github: "https://github.com/Goku-4014/project",
       demo: "#"
     }
   ];
