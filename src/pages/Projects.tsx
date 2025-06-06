@@ -12,10 +12,10 @@ export default function Projects() {
       demo: "https://pitching-app.vercel.app/"
     },
     {
-      title: "Weather Dashboard (In-Progress)",
-      description: "Real-time weather application that displays current weather conditions and forecasts. Integrates with OpenWeatherMap API and features a responsive design.",
-      tech: ["JavaScript", "API Integration", "CSS3"],
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80",
+      title: "Snippet Vault(In-Progress)",
+      description: "Developed a feature-rich web app using React, TypeScript, and Tailwind CSS to manage and analyze code snippets efficiently, Enabled developers to organize, search, and improve their code with AI-powered functionality",
+      tech: ["JavaScript", "API Integration", "React","HuggingFace"],
+      image: "./snippet.png",
       github: "#",
       demo: "#"
     },
