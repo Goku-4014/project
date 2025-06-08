@@ -36,7 +36,7 @@ export default function Home() {
                   Contact Me
                 </Link>
                 <a 
-                  href="./resume.pdf" 
+                  href="./manish.pdf" 
                   download 
                   className="bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg font-medium flex items-center gap-2"
                 >
