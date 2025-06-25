@@ -8,6 +8,7 @@ import {
   Eye,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { title } from 'motion/react-client';
 
 const categories = [
   { id: 'all', name: 'All Projects', icon: Terminal },
@@ -24,7 +25,7 @@ const projects = [
       'A comprehensive app empowering startups to create and manage pitch decks with real-time collaboration and analytics.',
     tech: ['NextJS', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL'],
     category: 'fullstack',
-    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800&h=600',
+    image: '/startup.jpg',
     github: 'https://github.com/Goku-4014/pitching_app',
     demo: 'https://pitching-app.vercel.app/',
     status: 'completed',
@@ -36,7 +37,7 @@ const projects = [
       'Smart snippet management platform powered by AI for tagging, searching, and organizing code snippets.',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'HuggingFace API', 'Node.js'],
     category: 'ai',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800&h=600',
+    image: '/snippet.png',
     github: '#',
     demo: '#',
     status: 'in-progress',
@@ -48,11 +49,22 @@ const projects = [
       'Modern, animated portfolio showcasing projects with dark/light mode, motion effects, and accessibility.',
     tech: ['React', 'Tailwind CSS', 'Framer Motion', 'React Router'],
     category: 'frontend',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800&h=600',
+    image: '/portfolio.png',
     github: 'https://github.com/Goku-4014/project',
     demo: '#',
     status: 'completed',
   },
+  {
+    id:4,
+    title: 'Algo-Viz',
+    description :'An Algorithm Visualizar that you might have not seen before.',
+    tech: ['React', 'Javascript', 'Tailwind CSS', 'Framer Motion(Motion)', 'React Router'],
+    category : 'frontend',
+    image:'/AlgoViz.png',
+    github: 'https://github.com/Goku-4014/AlgoViz',
+    demo: 'https://algo-viz-phi.vercel.app/',
+    status: 'in-progress'
+  }
 ];
 
 const getStatusStyle = (status) => {
