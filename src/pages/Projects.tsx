@@ -1,75 +1,211 @@
-import React from 'react';
-import { Github, ExternalLink, Terminal } from 'lucide-react';
+import React, { useState } from 'react';
+import {
+  Github,
+  ExternalLink,
+  Terminal,
+  Code2,
+  GitBranch,
+  Eye,
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const categories = [
+  { id: 'all', name: 'All Projects', icon: Terminal },
+  { id: 'fullstack', name: 'Full Stack', icon: Code2 },
+  { id: 'frontend', name: 'Frontend', icon: Eye },
+  { id: 'ai', name: 'AI/ML', icon: GitBranch },
+];
+
+const projects = [
+  {
+    id: 1,
+    title: 'Pitch Management App for Startups',
+    description:
+      'A comprehensive app empowering startups to create and manage pitch decks with real-time collaboration and analytics.',
+    tech: ['NextJS', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL'],
+    category: 'fullstack',
+    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800&h=600',
+    github: 'https://github.com/Goku-4014/pitching_app',
+    demo: 'https://pitching-app.vercel.app/',
+    status: 'completed',
+  },
+  {
+    id: 2,
+    title: 'Snippet Vault',
+    description:
+      'Smart snippet management platform powered by AI for tagging, searching, and organizing code snippets.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'HuggingFace API', 'Node.js'],
+    category: 'ai',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800&h=600',
+    github: '#',
+    demo: '#',
+    status: 'in-progress',
+  },
+  {
+    id: 3,
+    title: 'Portfolio Website',
+    description:
+      'Modern, animated portfolio showcasing projects with dark/light mode, motion effects, and accessibility.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'React Router'],
+    category: 'frontend',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800&h=600',
+    github: 'https://github.com/Goku-4014/project',
+    demo: '#',
+    status: 'completed',
+  },
+];
+
+const getStatusStyle = (status) => {
+  switch (status) {
+    case 'completed':
+      return 'bg-green-500/10 text-green-400 border-green-400/30';
+    case 'in-progress':
+      return 'bg-yellow-500/10 text-yellow-400 border-yellow-400/30';
+    default:
+      return 'bg-blue-500/10 text-blue-400 border-blue-400/30';
+  }
+};
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Pitch Management App for Startups",
-      description: "Developed a web application to assist startups in creating and managing their pitch presentations",
-      tech: ["NextJS", "TypeScript", "Tailwind CSS"],
-      image: "./startup.jpg",
-      github: "https://github.com/Goku-4014/pitching_app",
-      demo: "https://pitching-app.vercel.app/"
-    },
-    {
-      title: "Snippet Vault(In-Progress)",
-      description: "Developed a feature-rich web app using React, TypeScript, and Tailwind CSS to manage and analyze code snippets efficiently, Enabled developers to organize, search, and improve their code with AI-powered functionality",
-      tech: ["JavaScript", "API Integration", "React","HuggingFace"],
-      image: "./snippet.png",
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Portfolio Website",
-      description: "A personal portfolio website built with React and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
-      tech: ["React", "Tailwind CSS", "React Router"],
-      image: "./portfolio.jpg",
-      github: "https://github.com/Goku-4014/project",
-      demo: "#"
-    }
-  ];
+  const [filter, setFilter] = useState('all');
+  const filtered =
+    filter === 'all' ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16">Featured Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="bg-gray-800/50 rounded-xl overflow-hidden group">
-              <div className="aspect-video bg-gray-700 relative overflow-hidden">
-                <img 
-                  src={project.image} 
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden text-white bg-gradient-to-br from-[#100f2c] via-[#1c1a3d] to-[#0d0b1f]">
+      <motion.div
+        className="absolute -top-40 -left-32 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-3xl"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.35, 0.2] }}
+        transition={{ duration: 20, repeat: Infinity }}
+      />
+      <motion.div
+        className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-fuchsia-500/20 rounded-full blur-2xl"
+        animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
+        transition={{ duration: 25, repeat: Infinity }}
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:20px_20px] z-0 pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h2
+            className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            Featured Projects
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Explore apps, AI tools & full-stack platforms I've built.
+          </motion.p>
+        </motion.div>
+
+        <div className="flex justify-center flex-wrap gap-4 mb-12">
+          {categories.map((c, i) => (
+            <motion.button
+              key={c.id}
+              onClick={() => setFilter(c.id)}
+              className={`px-6 py-2 rounded-full border flex items-center gap-2 text-sm font-medium transition-all duration-300 ${
+                filter === c.id
+                  ? 'bg-blue-500 text-white border-blue-500 shadow-lg shadow-blue-400/30'
+                  : 'text-gray-300 bg-white/5 hover:bg-white/10 border-white/10'
+              }`}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <c.icon size={16} />
+              {c.name}
+            </motion.button>
+          ))}
+        </div>
+
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
+          {filtered.map((project) => (
+            <motion.div
+              key={project.id}
+              className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 shadow-md hover:shadow-xl backdrop-blur-md group transition-all"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={project.image}
                   alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors" />
+                <div
+                  className={`absolute top-4 left-4 px-3 py-1 text-xs rounded-full border ${getStatusStyle(
+                    project.status
+                  )}`}
+                >
+                  {project.status.toUpperCase()}
+                </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4 text-sm">
+                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm text-gray-400 mb-3 line-clamp-3">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, i) => (
-                    <span key={i} className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded">
+                  {project.tech.map((tech, idx) => (
+                    <motion.span
+                      key={idx}
+                      className="bg-white/10 text-xs px-3 py-1 rounded-full border border-white/20 text-gray-300"
+                      whileHover={{ scale: 1.05, y: -1 }}
+                    >
                       {tech}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  <a href={project.github} className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
-                    <Github size={20} />
-                    Code
-                  </a>
-                  <a href={project.demo} className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
-                    <ExternalLink size={20} />
-                    Live Demo
-                  </a>
+                <div className="flex justify-between text-sm">
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-400 hover:underline flex items-center gap-1"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Github size={16} /> Code
+                  </motion.a>
+                  <motion.a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-green-400 hover:underline flex items-center gap-1"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <ExternalLink size={16} /> Demo
+                  </motion.a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
